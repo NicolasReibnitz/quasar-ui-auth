@@ -16,14 +16,11 @@ module.exports = function (api) {
   api.compatibleWith('quasar', '^2.0.0')
 
   if (api.hasVite === true) {
-    api.compatibleWith('@quasar/app-vite', '^1.0.0-beta.0')
+    api.compatibleWith('@quasar/app-vite', '^1.x || ^2.0.0-beta || ^2.x')
   } else {
     // api.hasWebpack === true
     api.compatibleWith('@quasar/app-webpack', '^3.0.0')
   }
-
-  // Uncomment the line below if you provide a JSON API for your component
-  // api.registerDescribeApi('AuthRegisterForm', '~quasar-ui-auth/src/components/AuthRegisterForm.json')
 
   // We extend /quasar.conf.js
   api.extendQuasarConf(extendConf, api)
