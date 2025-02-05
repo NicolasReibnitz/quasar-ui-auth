@@ -1,7 +1,7 @@
 const
   fs = require('fs'),
   path = require('path'),
-  zlib = require('zlib'),
+  zlib = require('node:zlib'),
   { green, blue, red, cyan } = require('chalk'),
   kebabRegex = /[A-Z\u00C0-\u00D6\u00D8-\u00DE]/g
 

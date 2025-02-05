@@ -38,14 +38,20 @@ module.exports.syncAppExt = function (both = true) {
   // check dependencies
   if (appExtJson.dependencies !== void 0) {
     if (appExtJson.dependencies[name] !== void 0) {
-      appExtJson.dependencies[name] = '^' + version
+      // Preserve local file paths, only update version if it's a semver
+      if (!appExtJson.dependencies[name].startsWith('file:')) {
+        appExtJson.dependencies[name] = '^' + version
+      }
       finished = true
     }
   }
   // check devDependencies, if not finished
   if (finished === false && appExtJson.devDependencies !== void 0) {
     if (appExtJson.devDependencies[name] !== void 0) {
-      appExtJson.devDependencies[name] = '^' + version
+      // Preserve local file paths, only update version if it's a semver
+      if (!appExtJson.devDependencies[name].startsWith('file:')) {
+        appExtJson.devDependencies[name] = '^' + version
+      }
       finished = true
     }
   }

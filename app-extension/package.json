@@ -12,6 +12,6 @@
   "bugs": "https://github.com/vueauth/vueauth/issues",
   "homepage": "https://vueauth.com/",
   "dependencies": {
-    "@vueauth/quasar-ui-auth": "^1.0.0-alpha.32"
+    "@vueauth/quasar-ui-auth": "file:../ui"
   }
 }
